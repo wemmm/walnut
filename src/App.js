@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, ButtonGroup, Table } from 'react-bootstrap';
 import customers from './customers.json';
-import { FaUser, FaBriefcase, FaChild, FaSmileO, FaMoney, FaCheck, FaExpand, FaCompress, FaCubes } from 'react-icons/lib/fa';
+import { FaUser, FaBriefcase, FaChild, FaSmileO, FaMoney, FaCheck, FaExpand, FaCompress, FaCubes, FaPagelines } from 'react-icons/lib/fa';
 import { PieChart, Pie, Legend, Tooltip } from 'recharts';
 import Chart from './Chart'
 
@@ -45,7 +45,7 @@ class App extends Component {
 
       <div className="app">
         <header>
-          <h1>Walnut</h1>
+          <h1><FaPagelines color='#8FC9BD'/> Walnut</h1>
         </header>
         <Chart></Chart>
         <Table striped>
