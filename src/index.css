@@ -5,6 +5,9 @@ h1 {
   font-size: 60px;
   margin: 40px;
   margin-left: 0;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #8FC9BD;
 }
 
 body {
@@ -14,6 +17,26 @@ body {
 }
 
 th {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bolder;
+}
+
+.btn {
+  background-color: #8FC9BD;
+  border-color: #72a89d;
+}
+
+.btn:hover {
+  background-color: #72a89d;
+  border-color: #72a89d;
+}
+
+.children {
+  text-align: center;
+}
+
+div.recharts-wrapper {
+  margin: auto;
+  margin-top: -80px;
+  margin-bottom: -40px;
 }

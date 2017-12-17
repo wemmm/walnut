@@ -2,16 +2,18 @@ import React, { Component } from 'react';
 import { Button, ButtonGroup, Table } from 'react-bootstrap';
 import customers from './customers.json';
 import { FaUser, FaBriefcase, FaChild, FaSmileO, FaMoney, FaCheck, FaArrowUp, FaArrowDown } from 'react-icons/lib/fa';
+import { PieChart, Pie, Legend, Tooltip } from 'recharts';
+import Chart from './Chart'
 
 const CustomerRow = ({customer}) => (
   <tr>
     <td>{customer.title} {customer.first_name} {customer.last_name}</td>
     <td>{customer.profession}</td>
-    <td>{customer.has_children ? <FaCheck/> : ""}</td>
+    <td className="children">{customer.has_children ? <FaCheck/> : ""}</td>
     <td>
       {customer.dominant_traits[0].level} {customer.dominant_traits[0].primary_trait}, {customer.dominant_traits[1].level} {customer.dominant_traits[1].secondary_trait}
     </td>
-    <td>{customer.wealth}</td>
+    <td>£{customer.wealth}</td>
   </tr>
 );
 
@@ -37,18 +39,20 @@ class App extends Component {
 
   render() {
     return (
+
       <div className="app">
         <header>
           <h1>Walnut</h1>
         </header>
+        <Chart></Chart>
         <Table striped>
           <thead>
             <tr>
-              <th><FaUser/> Name</th>
-              <th><FaBriefcase/> Profession</th>
-              <th><FaChild/> Children</th>
-              <th><FaSmileO/> Traits</th>
-              <th><FaMoney/> Income</th>
+              <th><FaUser color='#8FC9BD'/> Name</th>
+              <th><FaBriefcase color='#8FC9BD'/> Profession</th>
+              <th><FaChild color='#8FC9BD'/> Children</th>
+              <th><FaSmileO color='#8FC9BD'/> Traits</th>
+              <th><FaMoney color='#8FC9BD'/> Wealth</th>
             </tr>
           </thead>
           <tbody>
