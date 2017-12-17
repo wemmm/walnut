@@ -1,5 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Montserrat');
+
+h1 {
+  font-family: Comfortaa, sans-serif;
+  font-size: 60px;
+  margin: 40px;
+  margin-left: 0;
+}
+
 body {
-  margin: 0;
+  margin: 40px;;
   padding: 0;
-  font-family: sans-serif;
+  font-family: Montserrat, sans-serif;
+}
+
+th {
+  font-size: 18px;
+  font-weight: bolder;
 }
