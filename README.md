@@ -32,6 +32,8 @@ I used react-bootstrap and react-icons to improve the look and feel of the page,
 
 * I would have liked to refactor the App component into smaller sub components- for instance, CustomerRow. It currently has more responsibilities than I would like.
 * I have used React's shallow rendering for testing, but I'm very new to testing in React! As such I think this could have been tested more thoroughly. This is an area I hope to learn more about.
+* I think the App would benefit from the ability to sort records in ascending or descending order based on any column that would support that (income, name, etc.)
+* I would also like to add a feature that dynamically changes the pie charts to represent a single customer's data if that customer's row is clicked on.
 
 ## Tech
 
