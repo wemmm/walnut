@@ -5,10 +5,12 @@
 ## TODOS:
 
 * Show more than 10 customer records at a time
+* Sortable columns? Search? Filter?
 * Add symbols to clarify types of data/button functions
 * Fonts, styles, colours, etc.
 
 ## Tech
 
 * React.js
-* Node
+* Node.js
+* react-icons

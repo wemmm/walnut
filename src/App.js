@@ -15,6 +15,25 @@ const CustomerRow = ({customer}) => (
 );
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      recordsShown: 10,
+    }
+  }
+
+  incrementRecords = () => {
+    this.setState({
+      recordsShown: this.state.recordsShown + 10,
+    });
+  }
+
+  decrementRecords = () => {
+    this.setState({
+      recordsShown: this.state.recordsShown - 10,
+    });
+  }
+
   render() {
     return (
       <div className="app">
@@ -33,10 +52,19 @@ class App extends Component {
           </thead>
           <tbody>
           {
-            customers.slice(0, 10).map(c => <CustomerRow customer={c}/>)
+            customers.slice(0, this.state.recordsShown).map(c => <CustomerRow customer={c}/>)
           }
           </tbody>
         </table>
+
+        <button onClick={this.incrementRecords}>
+          Next 10
+        </button>
+
+        <button onClick={this.decrementRecords}>
+          Previous 10
+        </button>
+
       </div>
     );
   }
