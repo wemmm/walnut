@@ -15,7 +15,7 @@ describe('App', () => {
     const renderer = new ShallowRenderer();
     renderer.render(<App />);
     const result = renderer.getRenderOutput();
-    const recordNumber = result.props.children[1].props.children[1].props.children.length
+    const recordNumber = result.props.children[2].props.children[1].props.children.length
     expect(recordNumber).toBe(10);
   });
 
@@ -30,7 +30,7 @@ describe('App', () => {
     const renderer = new ShallowRenderer();
     renderer.render(<App />);
     const result = renderer.getRenderOutput();
-    const buttonClass = result.props.children[2].props.children[0].type.defaultProps.bsClass
+    const buttonClass = result.props.children[3].props.children[0].type.defaultProps.bsClass
     expect(buttonClass).toBe('btn');
   });
 
@@ -38,7 +38,7 @@ describe('App', () => {
     const renderer = new ShallowRenderer();
     renderer.render(<App />);
     const result = renderer.getRenderOutput();
-    const buttonClass = result.props.children[2].props.children[1].type.defaultProps.bsClass
+    const buttonClass = result.props.children[3].props.children[1].type.defaultProps.bsClass
     expect(buttonClass).toBe('btn');
   });
 });
