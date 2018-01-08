@@ -43,3 +43,5 @@ I used react-bootstrap and react-icons to improve the look and feel of the page,
 * react-icons (FontAwesome)
 * Recharts
 * Google Fonts
+
+![walnut](https://github.com/wemmm/walnut/blob/master/walnut.png)
