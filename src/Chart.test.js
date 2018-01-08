@@ -8,7 +8,6 @@ describe('Chart', () => {
     const renderer = new ShallowRenderer();
     renderer.render(<Chart />);
     const result = renderer.getRenderOutput();
-    console.log(result.props.children)
     expect(result.type.displayName).toBe('PieChart');
   });
 });

@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import customers from './customers.json';
 import { PieChart, Pie, Legend, Tooltip } from 'recharts';
 
-const data01 = [{name: 'Divorced', value: 52}, {name: 'Married', value: 98},
-                  {name: 'Separated', value: 20}, {name: 'Single', value: 30},
-                  {name: 'Widowed', value: 35}, {name: 'Other', value: 15}]
+const data01 = [{name: 'Divorced', value: (customers.filter(c => c.marital_status == "Divorced").length)},
+                {name: 'Married', value: (customers.filter(c => c.marital_status == "Married").length)},
+                {name: 'Single', value: (customers.filter(c => c.marital_status == "Single").length)},
+                {name: 'Other', value: (customers.filter(c => c.marital_status == "Other").length)}]
 
-const data02 = [{name: 'Agreeable', value: 62}, {name: 'Conscientious', value: 38},
-                  {name: 'Extroverted', value: 27}, {name: 'Open', value: 73},
-                  {name: 'Neurotic', value: 50}];
+const data02 = [{name: 'Red Bank', value: (customers.filter(c => c.company == "Red Bank").length)},
+                {name: 'Blue Bank', value: (customers.filter(c => c.company == "Blue Bank").length)},
+                {name: 'Purple Bank', value: (customers.filter(c => c.company == "Purple Bank").length)},
+                {name: 'Green Bank', value: (customers.filter(c => c.company == "Green Bank").length)}];
 
 class Chart extends Component {
   render() {

@@ -3,7 +3,15 @@ import { Button, ButtonGroup, Table } from 'react-bootstrap';
 import customers from './customers.json';
 import { FaUser, FaBriefcase, FaChild, FaSmileO, FaMoney, FaCheck, FaExpand, FaCompress, FaCubes, FaPagelines } from 'react-icons/lib/fa';
 import { PieChart, Pie, Legend, Tooltip } from 'recharts';
-import Chart from './Chart'
+import Chart from './Chart';
+
+function colorOpenness(trait) {
+    // if (trait == "high openness") {
+    //   return <span className="high-openness">high openness</span>
+    // } else {
+      return trait
+    // }
+}
 
 const CustomerRow = ({customer}) => (
   <tr>
@@ -11,7 +19,7 @@ const CustomerRow = ({customer}) => (
     <td>{customer.profession}</td>
     <td className="children">{customer.has_children ? <FaCheck/> : ""}</td>
     <td>
-      {customer.dominant_traits[0].level} {customer.dominant_traits[0].primary_trait}, {customer.dominant_traits[1].level} {customer.dominant_traits[1].secondary_trait}
+      {colorOpenness(`${customer.dominant_traits[0].level} ${customer.dominant_traits[0].primary_trait}`)}, {customer.dominant_traits[1].level} {customer.dominant_traits[1].secondary_trait}
     </td>
     <td>£{customer.wealth}</td>
     <td>

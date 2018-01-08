@@ -41,3 +41,7 @@ div.recharts-wrapper {
   margin-bottom: -40px;
   text-align: center;
 }
+
+.high-openness {
+  color: crimson;
+}
