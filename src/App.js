@@ -70,7 +70,22 @@ class App extends Component {
 
       <div className="app">
         <header>
-          <h1><FaPagelines color='#8FC9BD'/> Walnut</h1>
+
+        <div className="toprow">
+        <h1><FaPagelines color='#8FC9BD'/> Walnut</h1>
+        <ButtonGroup className="sortbuttons">
+        <Button bsStyle="primary">
+        SORT
+        </Button>
+        <Button bsStyle="primary" onClick={this.sortCustomersByWealth}>
+        <FaMoney color='#FFFFFF'/> Wealth
+        </Button>
+        <Button bsStyle="primary" onClick={this.sortCustomersByAge}>
+        <FaUser color='#FFFFFF'/> Age
+        </Button>
+        </ButtonGroup>
+        </div>
+
         </header>
         <Chart></Chart>
         <Table striped>
@@ -101,25 +116,9 @@ class App extends Component {
           </Button>
         </ButtonGroup><br/><br/>
 
-        <ButtonGroup>
-          <Button bsStyle="primary">
-            SORT
-          </Button>
-          <Button bsStyle="primary" onClick={this.sortCustomersByWealth}>
-            <FaMoney color='#FFFFFF'/> Wealth
-          </Button>
-          <Button bsStyle="primary" onClick={this.sortCustomersByAge}>
-            <FaUser color='#FFFFFF'/> Age
-          </Button>
-        </ButtonGroup>
-
       </div>
     );
   }
 }
 
 export default App;
-
-// console.log(customers.sort(function (a, b) {
-//   return a.wealth - b.wealth;
-// }))

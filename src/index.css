@@ -40,8 +40,16 @@ div.recharts-wrapper {
   margin-top: -80px;
   margin-bottom: -40px;
   text-align: center;
+  display: inline-flex;
+  left: 180px;
 }
 
 .high-openness {
   color: crimson;
+}
+
+.sortbuttons {
+  float: right;
+  display: inline;
+  bottom: 100px;
 }
