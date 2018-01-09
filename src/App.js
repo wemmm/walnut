@@ -57,6 +57,14 @@ class App extends Component {
     })
   }
 
+  sortCustomersByAge = () => {
+    this.setState({
+      customerList: customers.sort(function (a, b) {
+        return a.age - b.age;
+      })
+    })
+  }
+
   render() {
     return (
 
@@ -84,17 +92,25 @@ class App extends Component {
         </Table>
 
         <ButtonGroup>
-        <Button bsStyle="primary" onClick={this.incrementRecords}>
-          <FaExpand/>
-        </Button>
+          <Button bsStyle="primary" onClick={this.incrementRecords}>
+            <FaExpand/>
+          </Button>
 
-        <Button bsStyle="primary" onClick={this.decrementRecords}>
-          <FaCompress/>
-        </Button>
+          <Button bsStyle="primary" onClick={this.decrementRecords}>
+            <FaCompress/>
+          </Button>
+        </ButtonGroup><br/><br/>
 
-        <Button bsStyle="primary" onClick={this.sortCustomersByWealth}>
-          SORT
-        </Button>
+        <ButtonGroup>
+          <Button bsStyle="primary">
+            SORT
+          </Button>
+          <Button bsStyle="primary" onClick={this.sortCustomersByWealth}>
+            <FaMoney color='#FFFFFF'/> Wealth
+          </Button>
+          <Button bsStyle="primary" onClick={this.sortCustomersByAge}>
+            <FaUser color='#FFFFFF'/> Age
+          </Button>
         </ButtonGroup>
 
       </div>
