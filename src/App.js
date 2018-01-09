@@ -16,14 +16,14 @@ function colorOpenness(trait) {
 const CustomerRow = ({customer}) => (
   <tr>
     <td>{customer.title} {customer.first_name} {customer.last_name}</td>
-    <td>{customer.profession}</td>
+    <td>{customer.profession ? customer.profession : "Unknown"}</td>
     <td className="children">{customer.has_children ? <FaCheck/> : ""}</td>
     <td>
       {colorOpenness(`${customer.dominant_traits[0].level} ${customer.dominant_traits[0].primary_trait}`)}, {customer.dominant_traits[1].level} {customer.dominant_traits[1].secondary_trait}
     </td>
-    <td>£{customer.wealth}</td>
+    <td>{customer.wealth ? `£${customer.wealth}` : "Unknown"}</td>
     <td>
-      {customer.high_propensity_products[0]}, {customer.high_propensity_products[1]}
+      {customer.high_propensity_products[0] && customer.high_propensity_products[1] ? `${customer.high_propensity_products[0]}, ${customer.high_propensity_products[1]}` : "None found" }
     </td>
   </tr>
 );
@@ -33,6 +33,7 @@ class App extends Component {
     super();
     this.state = {
       recordsShown: 10,
+      customerList: customers
     }
   }
 
@@ -46,6 +47,14 @@ class App extends Component {
     this.setState({
       recordsShown: this.state.recordsShown - 10,
     });
+  }
+
+  sortCustomersByWealth = () => {
+    this.setState({
+      customerList: customers.sort(function (a, b) {
+        return a.wealth - b.wealth;
+      })
+    })
   }
 
   render() {
@@ -82,6 +91,10 @@ class App extends Component {
         <Button bsStyle="primary" onClick={this.decrementRecords}>
           <FaCompress/>
         </Button>
+
+        <Button bsStyle="primary" onClick={this.sortCustomersByWealth}>
+          SORT
+        </Button>
         </ButtonGroup>
 
       </div>
@@ -90,3 +103,7 @@ class App extends Component {
 }
 
 export default App;
+
+// console.log(customers.sort(function (a, b) {
+//   return a.wealth - b.wealth;
+// }))

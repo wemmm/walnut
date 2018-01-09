@@ -18,7 +18,7 @@ class Chart extends Component {
   render() {
     return (
       <PieChart width={800} height={400}>
-        <Pie isAnimationActive={false} data={data01} cx={200} cy={200} outerRadius={80} fill="#8ED1CC" label/>
+        <Pie isAnimationActive={true} data={data01} cx={200} cy={200} outerRadius={80} fill="#8ED1CC" label/>
         <Pie data={data02} cx={500} cy={200} innerRadius={40} outerRadius={80} fill="#B2CE88"/>
         <Tooltip/>
      </PieChart>
